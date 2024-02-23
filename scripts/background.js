@@ -20,7 +20,8 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
                         - code quality,
                         - efficiency, and
                         - adherence to best practices.
-                    - Use points instead of writing paragraphs.`
+                    - Use points instead of writing paragraphs.
+                    - Use markdown to format your review.`
                 },
                 {
                     role: 'user', 
@@ -30,7 +31,7 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
               max_tokens: 1024,
               stop: ['</s>'],
               stream: false,
-              temperature: 0.8
+              temperature: 0.7
             })
         };
         console.log(message.prompt)

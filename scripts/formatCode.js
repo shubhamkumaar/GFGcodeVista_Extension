@@ -1,4 +1,3 @@
-
 console.log("formatCode.js loaded!")
 
 function waitForElement(selector, callback, timeout = 10000) {
@@ -33,6 +32,43 @@ ${problemAndCode}
 `
 }
 
+const display_code_review = () => {
+    const overlay = document.createElement('div');
+    overlay.style.display = 'block';
+    overlay.classList.add('overlay-code-review');
+
+    const code_review_div = document.createElement('div');
+    code_review_div.classList.add('code_review_div');
+
+    const code_review_text = document.createElement('p');
+    code_review_text.innerHTML = '<img src="https://s6.imgcdn.dev/teI9q.gif" width="100px" height="100px" style="display: block; margin: 0 auto;"/>';
+    code_review_text.classList.add('code_review_text');
+
+    const code_review_title_div = document.createElement('div');
+    code_review_title_div.classList.add('code_review_title_div');
+
+    const close_button = document.createElement('button');
+    close_button.classList.add('code_review_close');
+    close_button.innerHTML = 'x';
+    close_button.addEventListener('click', () => {
+        overlay.style.display = 'none';
+    });
+    
+    const code_review_title = document.createElement('h2');
+    code_review_title.classList.add('code_review_title');
+    code_review_title.innerHTML = 'Code Review';
+
+    code_review_title_div.appendChild(code_review_title);
+    code_review_title_div.appendChild(close_button);
+
+    code_review_div.appendChild(code_review_title_div);
+    code_review_div.appendChild(code_review_text);
+    overlay.appendChild(code_review_div);
+
+    document.body.appendChild(overlay);
+    return code_review_div;
+  }
+
 const add_listener = (element) => {
     element.addEventListener('click', async () => {
         console.log("Compile button clicked!")
@@ -44,10 +80,12 @@ const add_listener = (element) => {
         const problem_info = getProblemInfo()
 
         const final = problem_info + "\n\nUsers Code:\n```\n" + s + "\n```"
-                
+        const code_review_div = display_code_review()
         fPrompt = addPrompt(final)
         console.log("Got prompt")
         const code_review = await chrome.runtime.sendMessage({type:'prompt',prompt: fPrompt});
+        code_review_div.querySelector('.code_review_text').innerHTML = 
+          marked.parse(code_review);
         console.log(code_review)
     });
 }
@@ -61,7 +99,7 @@ const add_review_button = (element) => {
     add_listener(review_button);
 }
 
-// waitForElement('.problems_compile_button__Lfluz', add_listener, 10000);
+waitForElement('.problems_compile_button__Lfluz', add_listener, 10000);
 
 
 waitForElement('.problems_submit_button__6QoNQ', (element)=>{
