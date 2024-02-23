@@ -1,0 +1,46 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins',sans-serif;
+}
+
+body{
+    background-color: aqua;
+    align-items: center;
+    justify-content: center;
+    height: 500px;
+    width: 600px;
+}
+.container{
+    width: 100%;
+    gap: 10px;
+    padding: 10px;
+    max-width: 580px;
+}
+section{
+    background-color: white;
+    border-radius: 8px;
+}
+.drawing-board{
+    flex:1;
+    height: 500px;
+}
+.tool-box{
+    width: 100%;
+    height: 50px;
+    display: flex;
+}
+.options{
+    display: flex;
+    gap: 20px;
+}
+
+.options li{
+    list-style: none;
+}
+
+.drawing-board canvas{
+    width: 100%;
+    height: 100%;
+}
