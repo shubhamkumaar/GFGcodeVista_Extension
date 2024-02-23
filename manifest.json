@@ -6,6 +6,20 @@
     "action": {
       "default_popup": "popup.html",
       "default_icon": "./Images/gfg.png"
-    }
+    },
+    "host_permissions": [
+      "https://api.together.xyz/v1/chat/completions"
+    ],
+    "background": {
+      "service_worker": "scripts/background.js"
+    },  
+    "content_scripts": [
+      {
+        "js": ["scripts/formatCode.js"],
+        "matches": [
+          "https://www.geeksforgeeks.org/problems/*"
+        ]  
+      }
+    ]
   }
   
