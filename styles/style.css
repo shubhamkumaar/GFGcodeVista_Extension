@@ -6,16 +6,17 @@
 }
 
 body{
+    
     background-color: aqua;
     align-items: center;
     justify-content: center;
-    height: 500px;
-    width: 600px;
+    height: 50rem;
+    width: 50rem;
 }
 .container{
     width: 100%;
     padding: 10px;
-    max-width: 580px;
+    max-width: 100%;
 }
 section{
     background-color: white;

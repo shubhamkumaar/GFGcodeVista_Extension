@@ -1,6 +1,6 @@
 {
     "manifest_version": 3,
-    "name": "Hello Extensions",
+    "name": "Code Helper",
     "description": "GFG Extension",
     "version": "1.0",
     "action": {
@@ -14,7 +14,7 @@
     "background": {
       "service_worker": "scripts/background.js"
     },  
-    "permissions": ["scripting", "activeTab"],
+    "permissions": ["scripting", "activeTab","storage"],
     "content_scripts": [
       {
         "js": ["scripts/formatCode.js", "scripts/marked.js"],

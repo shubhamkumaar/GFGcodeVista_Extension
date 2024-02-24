@@ -47,3 +47,14 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
     }
     return true
 });
+
+chrome.runtime.onMessage.addListener(data =>{
+  if(data.event == "snippit"){
+
+    console.log(data.prefs)
+    chrome.storage.local.set(data.prefs)
+    console.log("bg snip")
+  }else{
+    console.log("bg err")
+  }
+})
