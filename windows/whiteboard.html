@@ -15,32 +15,39 @@
     <section class="tool-box">
     
         <div class="column">
-            <ul class="options">
-                <li>
-                    <img src="../Images/icons/brush.svg" alt="">
+            <ul class="options ">
+                <li class="option tool" id = "brush">
+                    <img class="brushBtn"  src="../Images/icons/brush.svg" alt="">
                     <span>Brush</span>
                 </li>
-                <li>
+                <li class="option tool" id="eraser">
                     <img src="../Images/icons/eraser.svg" alt="">
                     <span>Eraser</span>
                 </li>
-                <li>
-                    <input type="range" id="slider">
+                <li class="option">
+                    <input type="range" id="slider" min="1" max="30" value="4">
                 </li>
             </ul>  
             
         </div>
-        <div class="column">
+        <!-- <div class="column">
             <ul class="options">
                 <li class="option"></li>
                 <li class="option"></li>
                 <li class="option"></li>
                 <li class="option"></li>
             </ul>
-        </div>
+        </div> -->
         <div class="column">
-            <button class="clear-canvas">Clear Canvas</button>
-            <button class="save-img">Save as Image</button>
+            <ul class="options btnUl">
+                <li class="clear">
+                    <button class="btn clear-canvas">Clear</button>
+                </li>
+                <li class="save">
+                    <button class="btn save-img">Save</button>
+                </li>
+            </ul>            
+            
         </div>
     </div>
     </section>
