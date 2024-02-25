@@ -49,9 +49,9 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
 });
 
 chrome.runtime.onMessage.addListener(data =>{
-  if(data.event == "snippit"){
+  if(data.event == "snippet"){
 
-    console.log(data.prefs)
+    console.log(data.prefs.title)
     chrome.storage.local.set(data.prefs)
     console.log("bg snip")
   }else{

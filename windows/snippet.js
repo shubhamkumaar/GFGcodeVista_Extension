@@ -8,7 +8,8 @@ submit.addEventListener("click",()=>{
         title:titleEle.value,
         content:contentEle.value
     }
-    chrome.runtime.sendMessage({event:'snippit',prefs})
+    localStorage.setItem(titleEle.value,contentEle.value)
+    chrome.runtime.sendMessage({event:'snippet',prefs})
     // console.log(title)
     // console.log(content)
 
