@@ -4,8 +4,13 @@
     "description": "GFG Extension",
     "version": "1.0",
     "action": {
-      "default_popup": "popup.html",
-      "default_icon": "./Images/gfg.png"
+      "default_popup": "popup.html"
+    },
+    "icons": {
+      "16": "Images/gfg-bg-16.png",
+      "32": "Images/gfg-32.png",
+      "48": "Images/gfg-bg-48.png",
+      "128": "Images/gfg-128.png"
     },
     "host_permissions": [
       "https://api.together.xyz/v1/chat/completions",
