@@ -58,3 +58,8 @@ chrome.runtime.onMessage.addListener(data =>{
     console.log("bg err")
   }
 })
+
+chrome.action.onClicked.addListener(function(tab) {
+  console.log("clicked")
+  chrome.tabs.create({ url: chrome.runtime.getURL('index.html'), active: true });
+});
