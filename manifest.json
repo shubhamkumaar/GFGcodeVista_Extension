@@ -16,11 +16,12 @@
     "host_permissions": [
       "https://api.together.xyz/v1/chat/completions",
       "https://www.geeksforgeeks.org/problems/*"
-    ],
+    ], 
+  
     "background": {
       "service_worker": "scripts/background.js"
     },  
-    "permissions": ["scripting", "activeTab","storage","tabs","background"],
+    "permissions": ["scripting", "activeTab","tabs","background"],
     "content_scripts": [
       {
         "js": ["scripts/formatCode.js", "scripts/marked.js"],
