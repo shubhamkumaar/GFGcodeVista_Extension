@@ -5,6 +5,7 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
             headers: {
               accept: 'application/json',
               'content-type': 'application/json',
+              //  Paste your API key here.
               Authorization: 'Bearer e7e6f424ef0d78e5ce45c6165c3964cade308c74bf615a0b6872db3c55c17ccc'
             },
             body: JSON.stringify({
