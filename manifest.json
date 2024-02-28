@@ -17,7 +17,14 @@
       "https://api.together.xyz/v1/chat/completions",
       "https://www.geeksforgeeks.org/problems/*"
     ], 
-  
+    "commands": {
+      "_execute_action": {
+        "suggested_key": {
+          "default": "Ctrl+Q",
+          "mac": "Command+B"
+        }
+      }
+    },
     "background": {
       "service_worker": "scripts/background.js"
     },  

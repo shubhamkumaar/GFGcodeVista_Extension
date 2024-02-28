@@ -47,19 +47,3 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
     }
     return true
 });
-
-chrome.runtime.onMessage.addListener(data =>{
-  if(data.event == "snippet"){
-
-    console.log(data.prefs.title)
-    chrome.storage.local.set(data.prefs)
-    console.log("bg snip")
-  }else{
-    console.log("bg err")
-  }
-})
-
-chrome.action.onClicked.addListener(function(tab) {
-  console.log("clicked")
-  chrome.tabs.create({ url: chrome.runtime.getURL('index.html'), active: true });
-});
