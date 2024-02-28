@@ -1,11 +1,17 @@
 {
     "manifest_version": 3,
-    "name": "Code Helper",
+    "name": "GeekHelper",
     "description": "GFG Extension",
     "version": "1.0",
     "action": {
-      "default_popup": "popup.html",
-      "default_icon": "./Images/gfg.png"
+      "default_icon": "Images/logo128.png",
+      "default_popup": "popup.html"
+    },
+    "icons": {
+      "16": "Images/logo16.png",
+      "32": "Images/logo32.png",
+      "48": "Images/logo48.png",
+      "128": "Images/logo128.png"
     },
     "host_permissions": [
       "https://api.together.xyz/v1/chat/completions",
@@ -14,16 +20,14 @@
     "background": {
       "service_worker": "scripts/background.js"
     },  
-    "permissions": ["scripting", "activeTab","storage"],
+    "permissions": ["scripting", "activeTab","storage","tabs","background"],
     "content_scripts": [
       {
         "js": ["scripts/formatCode.js", "scripts/marked.js"],
         "matches": [
           "https://www.geeksforgeeks.org/problems/*"
         ],
-        "css": ["styles/formatCode.css"],
-        "type": "module"
-
+        "css": ["styles/formatCode.css"]
       }
     ]
   }

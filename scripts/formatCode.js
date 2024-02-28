@@ -41,7 +41,7 @@ const display_code_review = () => {
     code_review_div.classList.add('code_review_div');
 
     const code_review_text = document.createElement('p');
-    code_review_text.innerHTML = '<img src="https://s6.imgcdn.dev/teI9q.gif" width="100px" height="100px" style="display: block; margin: 0 auto;"/>';
+    code_review_text.innerHTML = '<img src="https://s6.imgcdn.dev/tq4EB.gif" width="100px" height="100px" style="display: block; margin: 0 auto;"/>';
     code_review_text.classList.add('code_review_text');
 
     const code_review_title_div = document.createElement('div');

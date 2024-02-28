@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>GeekHelper | WrtingBoard</title>
     <link rel="stylesheet" href="../styles/style.css">
 
 </head>
@@ -12,45 +12,36 @@
     <section class="drawing-board">
         <canvas></canvas>
     </section>
-    <section class="tool-box">
-    
-        <div class="column">
-            <ul class="options ">
-                <li class="option tool" id = "brush">
-                    <img class="brushBtn"  src="../Images/icons/brush.svg" alt="">
-                    <span>Brush</span>
-                </li>
-                <li class="option tool" id="eraser">
-                    <img src="../Images/icons/eraser.svg" alt="">
-                    <span>Eraser</span>
-                </li>
-                <li class="option">
-                    <input type="range" id="slider" min="1" max="30" value="4">
-                </li>
-            </ul>  
-            
+    <div class="tool-box-holder">
+        <section class="tool-box">
+            <div class="column">
+                <ul class="options ">
+                    <li class="option tool active" id = "brush">
+                        <img class="brushBtn"  src="../Images/icons/brush.svg" alt="Brush">
+                    </li>
+                    <li class="option tool" id="eraser">
+                        <img src="../Images/icons/eraser.svg" alt="Eraser">
+                    </li>
+                    <li class="option">
+                        <input type="range" id="slider" min="1" max="30" value="4">
+                    </li>
+                </ul>  
+                
+            </div>
+            <div class="column">
+                <ul class="options btnUl">
+                    <li class="clear">
+                        <button class="btn clear-canvas">Clear</button>
+                    </li>
+                    <li class="save">
+                        <button class="btn save-img">Save</button>
+                    </li>
+                </ul>            
+                
+            </div>
         </div>
-        <!-- <div class="column">
-            <ul class="options">
-                <li class="option"></li>
-                <li class="option"></li>
-                <li class="option"></li>
-                <li class="option"></li>
-            </ul>
-        </div> -->
-        <div class="column">
-            <ul class="options btnUl">
-                <li class="clear">
-                    <button class="btn clear-canvas">Clear</button>
-                </li>
-                <li class="save">
-                    <button class="btn save-img">Save</button>
-                </li>
-            </ul>            
-            
-        </div>
+        </section>
     </div>
-    </section>
     <script src="boardScript.js"></script>
 </body>
 </html>

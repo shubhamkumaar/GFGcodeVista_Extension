@@ -9,6 +9,11 @@ let isDrawing = false,
 brushWidht = 4;
 selectedTool = "brush";
 
+window.onresize = ()=>{
+    canvas.width = canvas.offsetWidth;
+    canvas.height = canvas.offsetHeight;
+}
+
 window.addEventListener("load",()=>{
     canvas.width = canvas.offsetWidth;
     canvas.height = canvas.offsetHeight;
@@ -22,7 +27,7 @@ const startDraw =()=>{
 const drawing = (e)=>{
     if(!isDrawing) return;
     if(selectedTool === "brush" || selectedTool === "eraser"){
-        ctx.strokeStyle = selectedTool === "eraser"?"#fff":"black"
+        ctx.strokeStyle = selectedTool === "eraser"?"#0a0e0f":"#e9e9ea";
         ctx.lineTo(e.offsetX,e.offsetY);
         ctx.stroke();
     }else{
@@ -33,6 +38,13 @@ const drawing = (e)=>{
 toolBtn.forEach( btn =>{
     btn.addEventListener('click',()=>{
         selectedTool = btn.id
+
+        toolBtn.forEach(b =>{
+            if(b != btn){
+                b.classList.remove('active')
+            }
+        })
+        btn.classList.toggle('active')
     })
 })
 
@@ -46,8 +58,22 @@ save.addEventListener("click",()=>{
     link.click();
 
 })
-slider.addEventListener("change",()=> brushWidht = slider.value)
+slider.addEventListener("change",()=> {
+    brushWidht = slider.value;
+})
+
+const setDefaultSlider = (defaultValue)=>{
+    const progress = (defaultValue / slider.max) * 100;
+    slider.style.background = `linear-gradient(to right, #2f8d46 ${progress}%, #ccc ${progress}%)`
+}
+
+slider.addEventListener("input",(e)=>{
+    tempSlider = e.target.value;
+    const progress = (tempSlider / slider.max) * 100;
+    slider.style.background = `linear-gradient(to right, #2f8d46 ${progress}%, #ccc ${progress}%)`;
+})
 canvas.addEventListener("mousedown",startDraw);
 canvas.addEventListener("mousemove",drawing);
 canvas.addEventListener("mouseup",()=>{isDrawing = false})
 
+setDefaultSlider(4)
