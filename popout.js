@@ -1,1 +1,3 @@
-window.open('windows/whiteboard.html', "whiteboard", "width=800, height=600 ,left=500px,top=100px");  
+setTimeout(()=>{
+    window.open("./windows/whiteboard.html", "writingBoard", "width=800px, height=600px ,left=620px,top=150px"); 
+},100)
